@@ -10,18 +10,38 @@ import java.io.UnsupportedEncodingException;
 
 public class FileUitls {
 
+	public static void reName(File dir) {
+		int x = 0;
+		if (dir.isDirectory()) {//判断是否为文件夹
+            //将该文件夹下所有的文件及文件夹存入数组中
+        File nextDir[]= dir.listFiles(); 
+        for (int i = 0; i < nextDir.length; i++) {
+            //输出文件及文件夹名
+        	String name = nextDir[i].getName();
+        	int lastIndexOf = name.lastIndexOf("_");
+        	int indexOf = name.indexOf("道");
+        	String name2 = "159cai-"+name.substring(indexOf+1,lastIndexOf);
+        	
+        	File file = new File("F:/ddd/"+name2+".apk");
+        	nextDir[i].renameTo(file);
+            System.out.println(name2);
+            x ++;
+        }
+        System.out.println("共执行了"+x);
+	}
+}
+	
 	public static void scanerFile(File dir) {
 		if (dir.isDirectory()) {//判断是否为文件夹
             //将该文件夹下所有的文件及文件夹存入数组中
         File nextDir[]= dir.listFiles(); 
         for (int i = 0; i < nextDir.length; i++) {
-            // 这个for循环为了增强输出格式的可读性
             //输出文件及文件夹名
             System.out.println(nextDir[i].getName());
         }
 	}
-}
-	
+		
+	}
 	public static void writeFile(File dir,File out) {
 		if (dir.isDirectory()) {//判断是否为文件夹
             //将该文件夹下所有的文件及文件夹存入数组中

@@ -26,8 +26,8 @@ public class Random {
 
 
 	public static void main(String[] args) {
-		File file = new File("d:/channel_apk");
+		File file = new File("F:/ddd");
 		File file2 = new File("D:/3.txt");
-		FileUitls.writeFile(file, file2);
+		FileUitls.reName(file);
 	}
 }
