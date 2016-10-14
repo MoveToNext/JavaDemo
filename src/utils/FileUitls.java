@@ -12,71 +12,71 @@ public class FileUitls {
 
 	public static void reName(File dir) {
 		int x = 0;
-		if (dir.isDirectory()) {//ÅĞ¶ÏÊÇ·ñÎªÎÄ¼ş¼Ğ
-            //½«¸ÃÎÄ¼ş¼ĞÏÂËùÓĞµÄÎÄ¼ş¼°ÎÄ¼ş¼Ğ´æÈëÊı×éÖĞ
-        File nextDir[]= dir.listFiles(); 
-        for (int i = 0; i < nextDir.length; i++) {
-            //Êä³öÎÄ¼ş¼°ÎÄ¼ş¼ĞÃû
-        	String name = nextDir[i].getName();
-        	int lastIndexOf = name.lastIndexOf("_");
-        	int indexOf = name.indexOf("µÀ");
-        	String name2 = "159cai-"+name.substring(indexOf+1,lastIndexOf);
-        	
-        	File file = new File("F:/ddd/"+name2+".apk");
-        	nextDir[i].renameTo(file);
-            System.out.println(name2);
-            x ++;
-        }
-        System.out.println("¹²Ö´ĞĞÁË"+x);
+		if (dir.isDirectory()) {//åˆ¤æ–­æ˜¯å¦ä¸ºæ–‡ä»¶å¤¹
+			//å°†è¯¥æ–‡ä»¶å¤¹ä¸‹æ‰€æœ‰çš„æ–‡ä»¶åŠæ–‡ä»¶å¤¹å­˜å…¥æ•°ç»„ä¸­
+			File nextDir[]= dir.listFiles();
+			for (int i = 0; i < nextDir.length; i++) {
+				//è¾“å‡ºæ–‡ä»¶åŠæ–‡ä»¶å¤¹å
+				String name = nextDir[i].getName();
+				int lastIndexOf = name.lastIndexOf("_");
+				int indexOf = name.indexOf("é“");
+				String name2 = "159cai-"+name.substring(indexOf+1,lastIndexOf);
+
+				File file = new File("F:/ddd/"+name2+".apk");
+				nextDir[i].renameTo(file);
+				System.out.println(name2);
+				x ++;
+			}
+			System.out.println("å…±æ‰§è¡Œäº†"+x);
+		}
 	}
-}
-	
+
 	public static void scanerFile(File dir) {
-		if (dir.isDirectory()) {//ÅĞ¶ÏÊÇ·ñÎªÎÄ¼ş¼Ğ
-            //½«¸ÃÎÄ¼ş¼ĞÏÂËùÓĞµÄÎÄ¼ş¼°ÎÄ¼ş¼Ğ´æÈëÊı×éÖĞ
-        File nextDir[]= dir.listFiles(); 
-        for (int i = 0; i < nextDir.length; i++) {
-            //Êä³öÎÄ¼ş¼°ÎÄ¼ş¼ĞÃû
-            System.out.println(nextDir[i].getName());
-        }
-	}
-		
+		if (dir.isDirectory()) {//åˆ¤æ–­æ˜¯å¦ä¸ºæ–‡ä»¶å¤¹
+			//å°†è¯¥æ–‡ä»¶å¤¹ä¸‹æ‰€æœ‰çš„æ–‡ä»¶åŠæ–‡ä»¶å¤¹å­˜å…¥æ•°ç»„ä¸­
+			File nextDir[]= dir.listFiles();
+			for (int i = 0; i < nextDir.length; i++) {
+				//è¾“å‡ºæ–‡ä»¶åŠæ–‡ä»¶å¤¹å
+				System.out.println(nextDir[i].getName());
+			}
+		}
+
 	}
 	public static void writeFile(File dir,File out) {
-		if (dir.isDirectory()) {//ÅĞ¶ÏÊÇ·ñÎªÎÄ¼ş¼Ğ
-            //½«¸ÃÎÄ¼ş¼ĞÏÂËùÓĞµÄÎÄ¼ş¼°ÎÄ¼ş¼Ğ´æÈëÊı×éÖĞ
-        File nextDir[]= dir.listFiles(); 
-      //´´½¨ÎÄ¼şÊä³öÁ÷
-        FileOutputStream fos;
-        //´´½¨×Ö·ûÊä³öÁ÷
-        OutputStreamWriter osw;
-		try {
-			fos = new FileOutputStream(out);
-			osw = new OutputStreamWriter(fos,"UTF-8");
-			 //´´½¨Êä³ö»º³åÁ÷
-			BufferedWriter bw = new BufferedWriter(osw);
-			for (int i = 0; i < nextDir.length; i++) {
-	            // Õâ¸öforÑ­»·ÎªÁËÔöÇ¿Êä³ö¸ñÊ½µÄ¿É¶ÁĞÔ
-	            //Êä³öÎÄ¼ş¼°ÎÄ¼ş¼ĞÃû
-				String name = nextDir[i].getName();
-	            System.out.println(name);
-	            osw.write("UMENG_CHANNEL ÇşµÀ"+name+" "+name+"\r\n");
-	            osw.flush();
-	        }
-			osw.close();
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}catch (UnsupportedEncodingException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		if (dir.isDirectory()) {//åˆ¤æ–­æ˜¯å¦ä¸ºæ–‡ä»¶å¤¹
+			//å°†è¯¥æ–‡ä»¶å¤¹ä¸‹æ‰€æœ‰çš„æ–‡ä»¶åŠæ–‡ä»¶å¤¹å­˜å…¥æ•°ç»„ä¸­
+			File nextDir[]= dir.listFiles();
+			//åˆ›å»ºæ–‡ä»¶è¾“å‡ºæµ
+			FileOutputStream fos;
+			//åˆ›å»ºå­—ç¬¦è¾“å‡ºæµ
+			OutputStreamWriter osw;
+			try {
+				fos = new FileOutputStream(out);
+				osw = new OutputStreamWriter(fos,"UTF-8");
+				//åˆ›å»ºè¾“å‡ºç¼“å†²æµ
+				BufferedWriter bw = new BufferedWriter(osw);
+				for (int i = 0; i < nextDir.length; i++) {
+					// è¿™ä¸ªforå¾ªç¯ä¸ºäº†å¢å¼ºè¾“å‡ºæ ¼å¼çš„å¯è¯»æ€§
+					//è¾“å‡ºæ–‡ä»¶åŠæ–‡ä»¶å¤¹å
+					String name = nextDir[i].getName();
+					System.out.println(name);
+					osw.write("UMENG_CHANNEL æ¸ é“"+name+" "+name+"\r\n");
+					osw.flush();
+				}
+				osw.close();
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}catch (UnsupportedEncodingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+
 		}
-        
-        
-	}
 	}
 }
 	

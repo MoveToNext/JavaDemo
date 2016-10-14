@@ -11,7 +11,7 @@ public class RandomUtils {
 	public static String x = "abc";
 	public static String xx = x+"---ttt";
 	/**
-	 * »ñÈ¡Ëæ»úÊı start - end »ñÈ¡Ò»¸ö
+	 * è·å–éšæœºæ•° start - end è·å–ä¸€ä¸ª
 	 * @param start
 	 * @param end
 	 * @return
@@ -21,44 +21,44 @@ public class RandomUtils {
 		int randNum = rand.nextInt(end-start+1)+start;
 		return randNum;
 	}
-	
+
 	/**
-	 * »ñÈ¡²»Í¬µÄÊı×Ö ·¶Î§£¨1 - 6£©
-	 * @param count ĞèÒª»ñµÃ¼¸¸ö²»Í¬µÄÊı×Ö
-	 * @return Êı×é
+	 * è·å–ä¸åŒçš„æ•°å­— èŒƒå›´ï¼ˆ1 - 6ï¼‰
+	 * @param count éœ€è¦è·å¾—å‡ ä¸ªä¸åŒçš„æ•°å­—
+	 * @return æ•°ç»„
 	 */
 	public static Object[] getRandomThree(int count) {
-	    Random random = new Random();
-        Object[] values = new Object[count];
-        HashSet<Integer> hashSet = new HashSet<Integer>();
-        
-        // Éú³ÉËæ»úÊı×Ö²¢´æÈëHashSet
-        while(hashSet.size() < values.length){
-            hashSet.add(random.nextInt(6) + 1);
-        }
-        
-        values = hashSet.toArray();
-        
-        // ±éÀúÊı×é²¢´òÓ¡Êı¾İ
-        for(int i = 0;i < values.length;i++){
-            System.out.print(values[i] + "\t");
-        }
-        return values;
+		Random random = new Random();
+		Object[] values = new Object[count];
+		HashSet<Integer> hashSet = new HashSet<Integer>();
+
+		// ç”Ÿæˆéšæœºæ•°å­—å¹¶å­˜å…¥HashSet
+		while(hashSet.size() < values.length){
+			hashSet.add(random.nextInt(6) + 1);
+		}
+
+		values = hashSet.toArray();
+
+		// éå†æ•°ç»„å¹¶æ‰“å°æ•°æ®
+		for(int i = 0;i < values.length;i++){
+			System.out.print(values[i] + "\t");
+		}
+		return values;
 	}
-	
+
 	public static void getK3XingTai(int[] item) {
 		Arrays.sort(item);
 		if (item[0] == item[1] && item[1] == item[2]) {
-			System.out.println("ÈıÍ¬ºÅ");
-			
+			System.out.println("ä¸‰åŒå·");
+
 		}else if (item[0] == item[1] || item[1] == item[2] || item[0] == item[2]) {
-			System.out.println("¶şÍ¬ºÅ");
+			System.out.println("äºŒåŒå·");
 		}else if (item[2] - item[0] == 2) {
-			System.out.println("ÈıÁ¬ºÅ");
+			System.out.println("ä¸‰è¿å·");
 		}else {
-			System.out.println("Èı²»Í¬ºÅ");
+			System.out.println("ä¸‰ä¸åŒå·");
 		}
-		
+
 //		System.out.println(item[0]);
 //		System.out.println(item[1]);
 //		System.out.println(item[2]);

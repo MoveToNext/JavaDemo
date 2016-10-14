@@ -3,13 +3,13 @@ package Bean;
 import utils.RandomUtils;
 
 public class NutritionFacts {
-	
-	private final int servingSize;// ±ØÒª
-	private final int servings;// ±ØÒª
-	private final int calories;// ¿ÉÑ¡
-	private final int fat;// ¿ÉÑ¡
-	private final int sodium;// ¿ÉÑ¡
-	private final int carbohydrate;// ¿ÉÑ¡
+
+	private final int servingSize;// å¿…è¦
+	private final int servings;// å¿…è¦
+	private final int calories;// å¯é€‰
+	private final int fat;// å¯é€‰
+	private final int sodium;// å¯é€‰
+	private final int carbohydrate;// å¯é€‰
 
 	public int getServingSize() {
 		return servingSize;
@@ -36,12 +36,12 @@ public class NutritionFacts {
 	}
 
 	public static class Builder {
-		private final int servingSize;// ±ØÒª
-		private final int servings;// ±ØÒª
-		private int calories = 0;// ¿ÉÑ¡
-		private int fat = 0;// ¿ÉÑ¡
-		private int sodium = 0;// ¿ÉÑ¡
-		private int carbohydrate = 0;// ¿ÉÑ¡
+		private final int servingSize;// å¿…è¦
+		private final int servings;// å¿…è¦
+		private int calories = 0;// å¯é€‰
+		private int fat = 0;// å¯é€‰
+		private int sodium = 0;// å¯é€‰
+		private int carbohydrate = 0;// å¯é€‰
 
 		public Builder(int servingSize, int servings) {
 			this.servingSize = servingSize;
